@@ -268,7 +268,6 @@ body {
     text-align: center;
     line-height: 2em; }
     .not-available:before {
-      font-family: fontawesome;
       content: "\f00d";
       color: #fff; }
   
