@@ -49,7 +49,6 @@ function App() {
       <Navbar />
       {/* <Slide/> */}
       <Routes>
-        <Route path="/forgottenpassword" element={<Forgotpassword />} />
         <Route path="/" element={<Home />} />
         <Route path="/test" element={<ContactUs />} />
         <Route path="/proceed" element={ <RequireAuth><Proceed /></RequireAuth>} />
