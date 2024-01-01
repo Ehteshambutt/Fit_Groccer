@@ -37,46 +37,44 @@ console.log(dataid,'dataid')
 
   return (
     <>
-        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-      {ProductData.map((Data, i) => (
-        <div key={i} className="col mb-5">
-          <div className="card1 margin-bit product-card1" onClick={() => { setbyId({ Data }); localStorage.setItem('Data', Data.img) }}>
-            <Link to={`/product/${Data.id}`}>
-              <img
-                className="card1-img-top"
-                src={Data.img}
-                width="100%"
-                height="200"
-                alt="..."
-              />
-            </Link>
-            <div className="card1-body p-4 pb-0">
-              <div className="text-left h-all">
-                <h5 className="title">
-                  <span className="subtitle namet" style={{
-                    fontFamily: 'Poppins',
-                    fontSize: '16px',
-                    fontWeight: '500',
-                    lineHeight: '24px',
-                    letterSpacing: '0em',
-                    textAlign: 'left',
-                  }}>{Data.title}</span>
-                  <span className="d-flex justify-content-between">
-                    <span className="currency text-danger mt-4">
-                      <i className="fa-regular fa-heart"></i>
+    <div className="container">
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+        {ProductData.map((Data, i) => (
+          <div key={i} className="col mb-4 col-sm-6 col-md-4">
+            <div className="card margin-bit product-card" onClick={() => { setbyId({ Data }); localStorage.setItem('Data', Data.img) }}>
+              <Link to={`/product/${Data.id}`}>
+                <img
+                  className="card-img-top img-fluid"
+                  src={Data.img}
+                  alt="..."
+                />
+              </Link>
+              <div className="card-body p-4 pb-0">
+                <div className="text-left h-all">
+                  <h5 className="title">
+                    <span className="subtitle namet" style={{
+                      fontFamily: 'Poppins',
+                      fontSize: '16px',
+                      fontWeight: '500',
+                      lineHeight: '24px',
+                      letterSpacing: '0em',
+                      textAlign: 'left',
+                    }}>{Data.title}</span>
+                    <span className="d-flex justify-content-between">
+                      <span className="currency text-danger mt-4">
+                        <i className="fa-regular fa-heart"></i>
+                      </span>
+                      <span className="currency text-danger justify-content-start">
+                        $ <span className="text-danger ">{Data.price}</span>
+                      </span>
                     </span>
-                    <span className="currency text-danger justify-content-start">
-                     $ <span className="text-danger ">{Data.price}</span>
-                    </span>
-                  </span>
-                </h5>
+                  </h5>
+                </div>
               </div>
-            </div>
-            <div className="btn-parent">
-              <div className="card1-footer margin-b p-1 pt-0 border-top-0 bg-transparent">
+              <div className="card-footer margin-b p-1 pt-0 border-top-0 bg-transparent">
                 <div className="text-center">
                   <button
-                  style={{color:'#E74C1B'}}
+                    style={{ color: '#E74C1B' }}
                     className="btn btn-block btn-outline-dark mt-auto custom-button-primary text-light"
                     onClick={() => {
                       dispatch(addToCart(Data));
@@ -88,12 +86,12 @@ console.log(dataid,'dataid')
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
-
-      <Outlet />
-    </>
+    <Outlet />
+  </>
+  
   );
   return(
     <ProductDetail  />
